@@ -1,0 +1,60 @@
+@import './scss/colors';
+
+body{
+    height: 100vh;
+    background: rgb(2,0,36);
+    background: linear-gradient(352deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 6%, rgba(0,212,255,1) 100%);
+}
+.form{
+    display: flex;
+    &__input{
+        margin-right: 15px;
+        height: 20px;
+        width: 230px;
+        border: none;
+        border-radius: 3px;
+        padding: 5px;
+    }
+    &__button{
+        border:none;
+        padding: 0 10px;
+        border-radius: 5px;
+        color: $black;
+        background-color: $greenyellow;
+        &:hover{
+            cursor: pointer;
+            background-color: $aquamarine;
+        }
+    }
+  }
+
+.delete-button{
+    border:none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin-left: 30px;
+    color: $white;
+    background-color: #ff3333;
+    &:hover{
+        cursor: pointer;
+        background-color: $red;
+    }
+}
+.list__li{
+    background-color: yellow;
+    display: flex;
+    justify-content: space-between;
+    margin: 10px;
+    border-radius: 5px;
+    padding: 5px;
+}
+.list{
+    min-width: 259px;
+}
+
+
+.main-wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
