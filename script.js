@@ -1,19 +1,18 @@
-const addButton = document.querySelector('.form__button')
-const formInput = document.querySelector('.form__input')
-const list = document.querySelector('.list')
-
+const addButton = document.querySelector('.form__button');
+const formInput = document.querySelector('.form__input');
+const list = document.querySelector('.list');
 
 addButton.addEventListener('click', ()=>{
-    let dataDisplay = formInput.value
-    let li = document.createElement('li');
-    li.classList.add('list__li')
-    if(dataDisplay){
-        li.innerHTML = `${dataDisplay} <button class="delete-button">Delete</button>`;
-    }else{
-        let empFild = 'The field is empty'
-        li.innerHTML = `${empFild} <button class="delete-button">Delete</button>`;
+  let fieldValue = formInput.value;
+  const createList = document.createElement('li');
+  createList.classList.add('list__li');
+  if (fieldValue) {
+    createList.innerHTML = `${fieldValue} <button class="delete-button">Delete</button>`;
+    } else {
+    const addingEmptyValue = 'The field is empty';
+    createList.innerHTML = `${addingEmptyValue} <button class="delete-button">Delete</button>`;
     }
-    list.prepend(li);
+    list.prepend(createList);
     ClearFields()
 })
 
@@ -22,15 +21,13 @@ function ClearFields() {
 }
 
 list.addEventListener('click',(event)=>{
-    let item = event.target
-    if(item.tagName === 'LI'){
-        item.style.backgroundColor = 'green'
-    } else if(item.classList.contains('delete-button')){
-        item.closest('li').remove()
+  const item = event.target;
+   if (item.classList.contains('delete-button')){
+    item.closest('li').remove();
+    }
+     else if (item.tagName === 'LI'){
+      item.classList.toggle('active');
     }
 })
 
-function deleteList(el){
-    el.closest('li').remove();
-}
 
